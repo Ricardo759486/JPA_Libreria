@@ -20,6 +20,9 @@ public class Author {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
+    private String country;
+
     // FetchType.EAGER: When we retrieve a Library, we'll also automatically retrieve all of its corresponding Books
     // CascadeType.ALL: Propagates all operations from Author to Books
     @OneToMany(mappedBy = "author", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -50,6 +53,18 @@ public class Author {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
     public List<Book> getBooks() {

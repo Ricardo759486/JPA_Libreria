@@ -27,20 +27,26 @@ public class Book {
     @JoinColumn(name = "author_id")
     private Author author;
 
+    @Column(name = "genere")
+    private String genere;
+
     @OneToOne(mappedBy = "book")
     private Edition edition;
 
-    public Book() {}
-
-    public Book(String title, String isbn) {
-        this.title = title;
-        this.isbn = isbn;
+    public Book() {
     }
 
-    public Book(Integer bookId, String title, String isbn) {
+    public Book(String title, String isbn, String genere) {
+        this.title = title;
+        this.isbn = isbn;
+        this.genere = genere;
+    }
+
+    public Book(Integer bookId, String title, String isbn, String genere) {
         this.bookId = bookId;
         this.title = title;
         this.isbn = isbn;
+        this.genere = genere;
     }
 
     public Integer getBookId() {
@@ -71,11 +77,25 @@ public class Book {
         return author;
     }
 
+    public String getGenere() {
+        return genere;
+    }
+
+    public void setGenere(String genere) {
+        this.genere = genere;
+    }
+
+    public void setEdition(Edition edition) {
+        this.edition = edition;
+    }
+
     public void setAuthor(Author author) {
         this.author = author;
     }
 
-    public Edition getEdition() { return edition; }
+    public Edition getEdition() {
+        return edition;
+    }
 
     public void addEdition(Edition edition) {
         this.edition = edition;

@@ -11,10 +11,10 @@
         <meta charset="utf-8">
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <!-- Stylesheets-->
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Fira+Sans:300,600,800,800i%7COpen+Sans:300,400,400i">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/fonts.css">
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/fonts.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
 
         <style>
@@ -25,7 +25,6 @@
 
     </head>
     <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="preloader">
         <div class="cssload-container">
             <svg class="filter" version="1.1">
@@ -48,7 +47,7 @@
         </div>
     </div>
     <!-- Page-->
-    <div class="page"><a class="banner banner-top" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" target="_blank"><img src="images/intense_02.jpg" alt="" height="0"/></a>
+    <div class="page"><a class="banner banner-top" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" target="_blank"><img src="src/main/webapp/images/intense_02.jpg" alt="" height="0"/></a>
         <header class="page-header">
             <!-- RD Navbar-->
             <div class="rd-navbar-wrap">
@@ -58,37 +57,9 @@
                         <div class="rd-navbar-top-panel__main">
                             <div class="rd-navbar-top-panel__toggle rd-navbar-fixed__element-1 rd-navbar-static--hidden" data-rd-navbar-toggle=".rd-navbar-top-panel__main"><span></span></div>
                             <div class="rd-navbar-top-panel__content">
-                                <div class="rd-navbar-top-panel__left">
-                                    <ul class="rd-navbar-items-list">
-                                        <li>
-                                            <div class="unit flex-row align-items-center unit-spacing-xs">
-                                                <div class="unit__left"><span class="icon icon-sm icon-primary linear-icon-map-marker"></span></div>
-                                                <div class="unit__body">
-                                                    <p><a href="#">Address: 4578 Marmora Road, Glasgow, D04 89GR</a></p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="unit flex-row align-items-center unit-spacing-xs">
-                                                <div class="unit__left"><span class="icon icon-sm icon-primary linear-icon-telephone"></span></div>
-                                                <div class="unit__body">
-                                                    <ul class="list-semicolon">
-                                                        <li><a href="tel:#">(800) 123-0045</a></li>
-                                                        <li><a href="tel:#">(800) 123-0045</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
                                 <div class="rd-navbar-top-panel__right">
                                     <ul class="list-inline-xxs">
-                                        <li><a class="icon icon-xxs icon-gray-darker fa fa-facebook" href="#"></a></li>
                                         <li><a class="icon icon-xxs icon-gray-darker fa fa-twitter" href="#"></a></li>
-                                        <li><a class="icon icon-xxs icon-gray-darker fa fa-google-plus" href="#"></a></li>
-                                        <li><a class="icon icon-xxs icon-gray-darker fa fa-vimeo" href="#"></a></li>
-                                        <li><a class="icon icon-xxs icon-gray-darker fa fa-youtube" href="#"></a></li>
-                                        <li><a class="icon icon-xxs icon-gray-darker fa fa-pinterest-p" href="#"></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -168,583 +139,57 @@
             <div class="swiper-button-prev linear-icon-chevron-left"></div>
             <div class="swiper-button-next linear-icon-chevron-right"></div>
         </div>
-        <section class="section-xs section-cta bg-gray-dark text-center text-md-left">
-            <div class="container">
-                <div class="row row-30 justify-content-between align-items-center">
-                    <div class="col-12 col-md-8">
-                        <h4>Like What We Offer?</h4>
-                        <p>Start with this demo now or check out the others in the full version of this template.</p>
-                    </div>
-                    <div class="col-12 col-md-4 text-md-right"><a class="button button-primary" href="about.html">Read more</a></div>
-                </div>
-            </div>
-        </section>
+
+
         <!-- About us-->
         <section class="bg-gray-lighter object-wrap">
-            <div class="bg-decor d-flex align-items-center justify-content-start" data-parallax-scroll="{&quot;y&quot;: 50,  &quot;smoothness&quot;: 30}"><img src="images/bg-decor-4.png" alt=""/>
+            <div class="bg-decor d-flex align-items-center justify-content-start" data-parallax-scroll="{&quot;y&quot;: 60,  &quot;smoothness&quot;: 30}"><img src="images/bg-decor-4.png" alt=""/>
             </div>
             <div class="section-lg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            <h4 class="heading-decorated">About us</h4>
-                            <p>Element boasts clean and crispy design, bulletproof layout consistency and intuitive navigation. The template was created by top industry leaders in web design and user experience. Improve your audience engagement and loyalty with simple and user friendly tools offered by our template.</p>
-                            <div class="row row-30">
-                                <div class="col-xl-6">
-                                    <!-- Blurb minimal-->
-                                    <article class="blurb blurb-minimal">
-                                        <div class="unit flex-row unit-spacing-md">
-                                            <div class="unit-left">
-                                                <div class="blurb-minimal__icon"><span class="icon linear-icon-menu3"></span></div>
-                                            </div>
-                                            <div class="unit-body">
-                                                <p class="blurb__title heading-6"><a href="#">Award-winning designs</a></p>
-                                                <p>We have received numerous awards for our designs, concepts, and ideas.</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- Blurb minimal-->
-                                    <article class="blurb blurb-minimal">
-                                        <div class="unit flex-row unit-spacing-md">
-                                            <div class="unit-left">
-                                                <div class="blurb-minimal__icon"><span class="icon linear-icon-users2"></span></div>
-                                            </div>
-                                            <div class="unit-body">
-                                                <p class="blurb__title heading-6"><a href="#">Expert team</a></p>
-                                                <p>We are a team of dedicated web design and development professionals.</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-                            </div>
-                            <div class="row justify-content-md-center">
-                                <div class="col-md-12">
-                                    <!-- Linear progress bar-->
-                                    <div class="progress-linear progress-linear-modern">
-                                        <div class="progress-header">
-                                            <p>Dedication</p><span class="progress-value">49</span>
-                                        </div>
-                                        <div class="progress-bar-linear-wrap">
-                                            <div class="progress-bar-linear"></div>
-                                        </div>
-                                    </div>
-                                    <!-- Linear progress bar-->
-                                    <div class="progress-linear progress-linear-modern">
-                                        <div class="progress-header">
-                                            <p>Experience</p><span class="progress-value">29</span>
-                                        </div>
-                                        <div class="progress-bar-linear-wrap">
-                                            <div class="progress-bar-linear"></div>
-                                        </div>
-                                    </div>
-                                    <!-- Linear progress bar-->
-                                    <div class="progress-linear progress-linear-modern">
-                                        <div class="progress-header">
-                                            <p>Creativity</p><span class="progress-value">86</span>
-                                        </div>
-                                        <div class="progress-bar-linear-wrap">
-                                            <div class="progress-bar-linear"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <h2>Library Manager</h2>
+                            <button onclick="location.href='./form-library.jsp';">Create library</button>
+                            <button onclick="location.href='./form-author.jsp';">Create author</button>
+                            <div/>
+                            <h3>Libraries</h3>
+
+                            <table id="librariesTbl">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+
+                            <h3>Authors</h3>
+
+                            <table id="authorsTbl">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th># Books</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="object-wrap__body object-wrap__body-sizing-1 object-wrap__body-md-right bg-image" style="background-image: url(images/bg-image-1.jpg)"></div>
         </section>
-        <!-- Our Services-->
-        <section class="section-md bg-default text-center decor-text" id="features" data-content="Services">
-            <div class="bg-decor d-flex align-items-center" data-parallax-scroll="{&quot;x&quot;: 80,  &quot;smoothness&quot;: 30}"><img src="images/bg-decor-1.png" alt=""/>
-            </div>
-            <div class="container">
-                <h4 class="heading-decorated">Our Services</h4>
-                <div class="row row-50 justify-content-md-center justify-content-lg-start text-left">
-                    <div class="col-md-6 col-xl-4">
-                        <!-- Blurb circle-->
-                        <article class="blurb blurb-minimal">
-                            <div class="unit flex-row unit-spacing-md">
-                                <div class="unit-left">
-                                    <div class="blurb-minimal__icon"><span class="icon linear-icon-pencil-ruler"></span></div>
-                                </div>
-                                <div class="unit-body">
-                                    <p class="blurb__title heading-6"><a href="#">Bootstrap Framework</a></p>
-                                    <p>Element is based on Bootstrap Framework, which makes it a nice template for any purpose.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <!-- Blurb circle-->
-                        <article class="blurb blurb-minimal">
-                            <div class="unit flex-row unit-spacing-md">
-                                <div class="unit-left">
-                                    <div class="blurb-minimal__icon"><span class="icon linear-icon-users"></span></div>
-                                </div>
-                                <div class="unit-body">
-                                    <p class="blurb__title heading-6"><a href="#">Novi Builder</a></p>
-                                    <p>Use our Novi Builder to customize and update your website within seconds.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <!-- Blurb circle-->
-                        <article class="blurb blurb-minimal">
-                            <div class="unit flex-row unit-spacing-md">
-                                <div class="unit-left">
-                                    <div class="blurb-minimal__icon"><span class="icon linear-icon-wall"></span></div>
-                                </div>
-                                <div class="unit-body">
-                                    <p class="blurb__title heading-6"><a href="#">Responsive & Retina Ready</a></p>
-                                    <p>Element looks great on any screen resolution and on any device due to its responsiveness.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <!-- Blurb circle-->
-                        <article class="blurb blurb-minimal">
-                            <div class="unit flex-row unit-spacing-md">
-                                <div class="unit-left">
-                                    <div class="blurb-minimal__icon"><span class="icon linear-icon-apartment"></span></div>
-                                </div>
-                                <div class="unit-body">
-                                    <p class="blurb__title heading-6"><a href="#">Tons of Tools for Real Needs</a></p>
-                                    <p>Event calendar, bookings and schedule  are just some of tools that come on board.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <!-- Blurb circle-->
-                        <article class="blurb blurb-minimal">
-                            <div class="unit flex-row unit-spacing-md">
-                                <div class="unit-left">
-                                    <div class="blurb-minimal__icon"><span class="icon linear-icon-home4"></span></div>
-                                </div>
-                                <div class="unit-body">
-                                    <p class="blurb__title heading-6"><a href="#">Multiple layouts</a></p>
-                                    <p>Huge number of content layouts allow to assemble unique pages with great flexibility.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <!-- Blurb circle -->
-                        <article class="blurb blurb-minimal">
-                            <div class="unit flex-row unit-spacing-md">
-                                <div class="unit-left">
-                                    <div class="blurb-minimal__icon"><span class="icon linear-icon-pencil-ruler2"></span></div>
-                                </div>
-                                <div class="unit-body">
-                                    <p class="blurb__title heading-6"><a href="#">Clean and Crispy Design</a></p>
-                                    <p>Element is crafted by top industry leaders with love, care and customer needs in mind.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <!-- Blurb minimal-->
-                        <article class="blurb blurb-minimal">
-                            <div class="unit flex-row unit-spacing-md">
-                                <div class="unit-left">
-                                    <div class="blurb-minimal__icon"><span class="icon linear-icon-magic-wand"></span></div>
-                                </div>
-                                <div class="unit-body">
-                                    <p class="blurb__title heading-6"><a href="#">Built For Speed</a></p>
-                                    <p>Our template was built for speed. Get the best results at GTmetrix and Google PageSpeed.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <!-- Blurb minimal-->
-                        <article class="blurb blurb-minimal">
-                            <div class="unit flex-row unit-spacing-md">
-                                <div class="unit-left">
-                                    <div class="blurb-minimal__icon"><span class="icon linear-icon-menu3"></span></div>
-                                </div>
-                                <div class="unit-body">
-                                    <p class="blurb__title heading-6"><a href="#">Flexible and Multipurpose</a></p>
-                                    <p>Element allows creating various websites for complex and scalable projects.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <!-- Blurb minimal-->
-                        <article class="blurb blurb-minimal">
-                            <div class="unit flex-row unit-spacing-md">
-                                <div class="unit-left">
-                                    <div class="blurb-minimal__icon"><span class="icon linear-icon-users2"></span></div>
-                                </div>
-                                <div class="unit-body">
-                                    <p class="blurb__title heading-6"><a href="#">SEO Friendly</a></p>
-                                    <p>Valid code and performance optimized framework make SEO easy and hassle free.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-md bg-gray-lighter text-center decor-text" data-content="Process">
-            <div class="container">
-                <h4 class="heading-decorated">Our working process</h4>
-                <div class="row row-30 justify-content-center">
-                    <div class="col-sm-10 col-lg-6"><img src="images/home-var-2-650x495.jpg" alt="" width="650" height="495"/>
-                    </div>
-                    <div class="col-sm-10 col-lg-6">
-                        <!-- Blurb circle-->
-                        <article class="blurb blurb-circle">
-                            <div class="unit flex-row unit-spacing-md">
-                                <div class="unit-left">
-                                    <div class="blurb-circle__icon"><span class="icon linear-icon-feather"></span></div>
-                                </div>
-                                <div class="unit-body">
-                                    <p class="blurb__title heading-6">Design creation</p>
-                                    <p>Firstly, our designers create the concept of a template, which can be changed and modified.</p>
-                                </div>
-                            </div>
-                        </article>
-                        <!-- Blurb circle-->
-                        <article class="blurb blurb-circle">
-                            <div class="unit flex-row unit-spacing-md">
-                                <div class="unit-left">
-                                    <div class="blurb-circle__icon"><span class="icon linear-icon-menu3"></span></div>
-                                </div>
-                                <div class="unit-body">
-                                    <p class="blurb__title heading-6">Development</p>
-                                    <p>Then our developers begin to work on implementing the template’s final look and features.</p>
-                                </div>
-                            </div>
-                        </article>
-                        <!-- Blurb circle-->
-                        <article class="blurb blurb-circle">
-                            <div class="unit flex-row unit-spacing-md">
-                                <div class="unit-left">
-                                    <div class="blurb-circle__icon"><span class="icon linear-icon-bag2"></span></div>
-                                </div>
-                                <div class="unit-body">
-                                    <p class="blurb__title heading-6">Testing</p>
-                                    <p>Finally, our QA experts make sure that everything works perfectly just as you would expect.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--cta-->
-        <!-- Call to Action-->
-        <section class="section-md bg-accent bg-image text-center bg-overlay-darker" style="background-image: url(images/bg-image-8.jpg); background-position: center 50%;">
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col-md-11 col-lg-9 col-xl-8">
-                        <h3 class="heading-decorated">Haven’t Found What You Like? Feel free to get in touch</h3><a class="button button-primary" href="contacts.html">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- portfolio-->
-        <section class="section-md bg-default text-center">
-            <div class="bg-decor d-flex align-items-center" data-parallax-scroll="{&quot;y&quot;: 50,  &quot;smoothness&quot;: 30}"><img src="images/bg-decor-6.png" alt=""/>
-            </div>
-            <div class="container">
-                <h4 class="heading-decorated">Portfolio</h4>
-                <div class="isotope-wrap row row-70">
-                    <div class="col-sm-12">
-                        <ul class="list-nav isotope-filters isotope-filters-horizontal">
-                            <li><a class="active" data-isotope-filter="*" data-isotope-group="gallery" href="#">All</a></li>
-                            <li><a data-isotope-filter="Category 1" data-isotope-group="gallery" href="#">Web Design</a></li>
-                            <li><a data-isotope-filter="Category 2" data-isotope-group="gallery" href="#">Web Development</a></li>
-                        </ul>
-                        <div class="isotope row" data-isotope-layout="fitRows" data-isotope-group="gallery">
-                            <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 2"><a class="img-thumbnail-variant-3" href="#"><img src="images/portfolio-5-418x315.jpg" alt="" width="418" height="315"/><span class="label-custom label-white">Link</span>
-                                <div class="caption"><span class="icon hover-top-element linear-icon-folder-picture"></span>
-                                    <ul class="list-inline-tag hover-top-element">
-                                        <li>9 photos</li>
-                                        <li>Web Development</li>
-                                    </ul>
-                                    <p class="heading-5 hover-top-element">Peterson Ltd.</p>
-                                    <div class="divider"></div>
-                                    <p class="small hover-bottom-element">Creative projects &amp; ideas</p><span class="icon arrow-right linear-icon-arrow-right"></span>
-                                </div></a>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 1"><a class="img-thumbnail-variant-3" href="images/slider-slide-14-1280x1920.jpg" data-lightgallery="item">
-                                <figure><img src="images/portfolio-2-418x315.jpg" alt="" width="418" height="315"/>
-                                </figure>
-                                <div class="caption"><span class="icon hover-top-element linear-icon-picture"></span>
-                                    <ul class="list-inline-tag hover-top-element">
-                                        <li>Web Design</li>
-                                    </ul>
-                                    <p class="heading-5 hover-top-element">Kreative Co.</p>
-                                    <div class="divider"></div>
-                                    <p class="small hover-bottom-element">Creative projects &amp; ideas</p><span class="icon arrow-right linear-icon-plus"></span>
-                                </div></a>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 2"><a class="img-thumbnail-variant-3" href="images/portfolio-original-9-1920x1282.jpg" data-lightgallery="item">
-                                <figure><img src="images/portfolio-9-418x315.jpg" alt="" width="418" height="315"/>
-                                </figure>
-                                <div class="caption"><span class="icon hover-top-element linear-icon-picture"></span>
-                                    <ul class="list-inline-tag hover-top-element">
-                                        <li>Web Development</li>
-                                    </ul>
-                                    <p class="heading-5 hover-top-element">Architex</p>
-                                    <div class="divider"></div>
-                                    <p class="small hover-bottom-element">Creative projects &amp; ideas</p><span class="icon arrow-right linear-icon-plus"></span>
-                                </div></a>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 1"><a class="img-thumbnail-variant-3" href="images/portfolio-original-4-1920x1920.jpg" data-lightgallery="item">
-                                <figure><img src="images/portfolio-4-418x315.jpg" alt="" width="418" height="315"/>
-                                </figure>
-                                <div class="caption"><span class="icon hover-top-element linear-icon-picture"></span>
-                                    <ul class="list-inline-tag hover-top-element">
-                                        <li>Web Design</li>
-                                    </ul>
-                                    <p class="heading-5 hover-top-element">Colorful Studios</p>
-                                    <div class="divider"></div>
-                                    <p class="small hover-bottom-element">Creative projects &amp; ideas</p><span class="icon arrow-right linear-icon-plus"></span>
-                                </div></a>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 1"><a class="img-thumbnail-variant-3" href="#"><img src="images/portfolio-1-418x315.jpg" alt="" width="418" height="315"/><span class="label-custom label-white">Link</span>
-                                <div class="caption"><span class="icon hover-top-element linear-icon-folder-picture"></span>
-                                    <ul class="list-inline-tag hover-top-element">
-                                        <li>9 photos</li>
-                                        <li>Web Design</li>
-                                    </ul>
-                                    <p class="heading-5 hover-top-element">BlueLine</p>
-                                    <div class="divider"></div>
-                                    <p class="small hover-bottom-element">Creative projects &amp; ideas</p><span class="icon arrow-right linear-icon-arrow-right"></span>
-                                </div></a>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 2"><a class="img-thumbnail-variant-3" href="images/portfolio-original-6-1920x1539.jpg" data-lightgallery="item">
-                                <figure><img src="images/portfolio-6-418x315.jpg" alt="" width="418" height="315"/>
-                                </figure>
-                                <div class="caption"><span class="icon hover-top-element linear-icon-picture"></span>
-                                    <ul class="list-inline-tag hover-top-element">
-                                        <li>Web Development</li>
-                                    </ul>
-                                    <p class="heading-5 hover-top-element">EOC Ltd.</p>
-                                    <div class="divider"></div>
-                                    <p class="small hover-bottom-element">Creative projects &amp; ideas</p><span class="icon arrow-right linear-icon-plus"></span>
-                                </div></a>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 2"><a class="img-thumbnail-variant-3" href="images/portfolio-original-7-1280x1920.jpg" data-lightgallery="item">
-                                <figure><img src="images/portfolio-7-418x315.jpg" alt="" width="418" height="315"/>
-                                </figure>
-                                <div class="caption"><span class="icon hover-top-element linear-icon-picture"></span>
-                                    <ul class="list-inline-tag hover-top-element">
-                                        <li>Web Development</li>
-                                    </ul>
-                                    <p class="heading-5 hover-top-element">SlabTek Inc.</p>
-                                    <div class="divider"></div>
-                                    <p class="small hover-bottom-element">Creative projects &amp; ideas</p><span class="icon arrow-right linear-icon-plus"></span>
-                                </div></a>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 2"><a class="img-thumbnail-variant-3" href="images/portfolio-original-8-1920x1336.jpg" data-lightgallery="item">
-                                <figure><img src="images/portfolio-8-418x315.jpg" alt="" width="418" height="315"/>
-                                </figure>
-                                <div class="caption"><span class="icon hover-top-element linear-icon-picture"></span>
-                                    <ul class="list-inline-tag hover-top-element">
-                                        <li>Web Development</li>
-                                    </ul>
-                                    <p class="heading-5 hover-top-element">TSB Studios</p>
-                                    <div class="divider"></div>
-                                    <p class="small hover-bottom-element">Creative projects &amp; ideas</p><span class="icon arrow-right linear-icon-plus"></span>
-                                </div></a>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 1"><a class="img-thumbnail-variant-3" href="#"><img src="images/portfolio-3-418x315.jpg" alt="" width="418" height="315"/><span class="label-custom label-white">Link</span>
-                                <div class="caption"><span class="icon hover-top-element linear-icon-folder-picture"></span>
-                                    <ul class="list-inline-tag hover-top-element">
-                                        <li>9 photos</li>
-                                        <li>Web Design</li>
-                                    </ul>
-                                    <p class="heading-5 hover-top-element">R-Bay Ltd.</p>
-                                    <div class="divider"></div>
-                                    <p class="small hover-bottom-element">Creative projects &amp; ideas</p><span class="icon arrow-right linear-icon-arrow-right"></span>
-                                </div></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section-md text-center bg-default">
-            <div class="bg-decor d-flex align-items-center justify-content-end" data-parallax-scroll="{&quot;y&quot;: 130, &quot;smoothness&quot;: 30}"><img src="images/bg-decor-4.png" alt=""/>
-            </div>
-            <div class="container">
-                <h4 class="heading-decorated">Our Clients</h4>
-                <div class="row row-30">
-                    <div class="col-sm-6 col-md-3">
-                        <figure class="box-icon-image"><a href="#"><img src="images/company-1-126x102.png" alt="" width="126" height="102"/></a></figure>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <figure class="box-icon-image"><a href="#"><img src="images/company-2-134x102.png" alt="" width="134" height="102"/></a></figure>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <figure class="box-icon-image"><a href="#"><img src="images/company-3-132x102.png" alt="" width="132" height="102"/></a></figure>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <figure class="box-icon-image"><a href="#"><img src="images/company-4-126x102.png" alt="" width="126" height="102"/></a></figure>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <figure class="box-icon-image"><a href="#"><img src="images/company-5-138x102.png" alt="" width="138" height="102"/></a></figure>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <figure class="box-icon-image"><a href="#"><img src="images/company-6-143x102.png" alt="" width="143" height="102"/></a></figure>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <figure class="box-icon-image"><a href="#"><img src="images/company-7-109x102.png" alt="" width="109" height="102"/></a></figure>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <figure class="box-icon-image"><a href="#"><img src="images/company-8-109x102.png" alt="" width="109" height="102"/></a></figure>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Page Footer--><a class="banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" target="_blank"><img src="images/intense_big_02.jpg" alt="" height="0"/></a>
-        <section class="pre-footer-corporate bg-image-7 bg-overlay-darkest">
-            <div class="container">
-                <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
-                    <div class="col-sm-10 col-md-6 col-lg-10 col-xl-3">
-                        <h6>About</h6>
-                        <p>Element is HTML template that fits for both developers and beginners. It comes loaded with an assortment of tools and features that make customization process much easier. A pack of child themes available with the full version of this template, allows users to create a fully functional site for any specific business quickly and worry-free.</p>
-                    </div>
-                    <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
-                        <h6>Navigation</h6>
-                        <ul class="list-xxs">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="#">Why Choose Us</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">Our Partners</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3">
-                        <h6>Recent Comments</h6>
-                        <ul class="list-xs">
-                            <li>
-                                <!-- Comment minimal-->
-                                <article class="comment-minimal">
-                                    <p class="comment-minimal__author">Brian Williamson on</p>
-                                    <p class="comment-minimal__link"><a href="#">Site Speed and Search Engines Optimization Aspects</a></p>
-                                </article>
-                            </li>
-                            <li>
-                                <!-- Comment minimal-->
-                                <article class="comment-minimal">
-                                    <p class="comment-minimal__author">Brian Williamson on</p>
-                                    <p class="comment-minimal__link"><a href="#">5 Things to Know Before You Buy an HTML Template</a></p>
-                                </article>
-                            </li>
-                            <li>
-                                <!-- Comment minimal-->
-                                <article class="comment-minimal">
-                                    <p class="comment-minimal__author">Brian Williamson on</p>
-                                    <p class="comment-minimal__link"><a href="#">Turning Your Site into a Sales Machine</a></p>
-                                </article>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
-                        <h6>Contacts</h6>
-                        <ul class="list-xs">
-                            <li>
-                                <dl class="list-terms-minimal">
-                                    <dt>Address</dt>
-                                    <dd>4578 Marmora Road, Glasgow, D04 89GR</dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl class="list-terms-minimal">
-                                    <dt>Phones</dt>
-                                    <dd>
-                                        <ul class="list-semicolon">
-                                            <li><a href="tel:#">(800) 123-0045</a></li>
-                                            <li><a href="tel:#">(800) 123-0045</a></li>
-                                        </ul>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl class="list-terms-minimal">
-                                    <dt>E-mail</dt>
-                                    <dd><a href="mailto:#">info@demolink.org</a></dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl class="list-terms-minimal">
-                                    <dt>Opening Hours:</dt>
-                                    <dd>Mn-Fr: 10 am-8 pm</dd>
-                                </dl>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="footer-corporate bg-gray-darkest">
-            <div class="container">
-                <div class="footer-corporate__inner">
-                    <p class="rights"><span>Element</span><span>&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="https://www.templatemonster.com">TemplateMonster</a></p>
-                    <ul class="list-inline-xxs">
-                        <li><a class="icon icon-xxs icon-primary fa fa-facebook" href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-primary fa fa-twitter" href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-primary fa fa-google-plus" href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-primary fa fa-vimeo" href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-primary fa fa-youtube" href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-primary fa fa-pinterest" href="#"></a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-    </div>
-    <!-- Global Mailform Output-->
-    <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
-        <h1>Library Manager</h1>
-
-        <button onclick="location.href='./form-library.jsp';">Create library</button>
-        <button onclick="location.href='./form-author.jsp';">Create author</button>
-
-        <h3>Libraries</h3>
-
-        <table id="librariesTbl">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-
-        <h3>Authors</h3>
-
-        <table id="authorsTbl">
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th># Books</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-
         <script>
 
             function printTable(elementId, servlet, columns, actions = []) {
