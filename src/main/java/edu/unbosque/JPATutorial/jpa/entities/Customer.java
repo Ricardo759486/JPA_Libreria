@@ -1,14 +1,13 @@
 package edu.unbosque.JPATutorial.jpa.entities;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Table(name = "Customer") // Optional
 @NamedQueries({
-        @NamedQuery(name = "Author.findByEmail",
-                query = "SELECT a FROM Customer a WHERE a.email = :email")
+        @NamedQuery(name = "Customer.findByFirstName",
+                query = "SELECT a FROM Customer a WHERE a.first_name = :firstname")
 })
 public class Customer {
 
@@ -27,7 +26,7 @@ public class Customer {
     private String gender;
 
     @Column(nullable = false)
-    private String age;
+    private Integer age;
 
     // FetchType.EAGER: When we retrieve a Library, we'll also automatically retrieve all of its corresponding Books
     // CascadeType.ALL: Propagates all operations from Author to Books
@@ -40,13 +39,12 @@ public class Customer {
         this.email = email;
     }
 
-    public Customer(String email, String first_name, String last_name, String gender, String age, List<Rent> rents) {
+    public Customer(String email, String first_name, String last_name, String gender, Integer age) {
         this.email = email;
         this.first_name = first_name;
         this.last_name = last_name;
         this.gender = gender;
         this.age = age;
-        this.rents = rents;
     }
 
     public String getEmail() {
@@ -81,11 +79,11 @@ public class Customer {
         this.gender = gender;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -97,7 +95,7 @@ public class Customer {
         this.rents = rents;
     }
 
-    public void addBook(Rent rent) {
+    public void addRent(Rent rent) {
         rents.add(rent);
         rent.setCustomer(this);
     }

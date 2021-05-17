@@ -20,28 +20,28 @@ public class Edition {
     private String description;
 
     @Column(name = "release_year")
-    private Date releaseYear;
+    private Integer releaseYear;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "book_id")
     private Book book;
 
     // FetchType.EAGER: When we retrieve a Library, we'll also automatically retrieve all of its corresponding Editions
     // CascadeType.PERSIST: When we save a superhero, its movies will also be saved
-    @ManyToMany(mappedBy = "editions", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-    private Set<Library> libraries = new HashSet<>();
-
-    @OneToMany(mappedBy = "edition", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Rent> rents = new ArrayList<>();
+//    @ManyToMany(mappedBy = "editions", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+//    private Set<Library> libraries = new HashSet<>();
+//
+//    @OneToMany(mappedBy = "edition", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    private List<Rent> rents = new ArrayList<>();
 
     public Edition() {}
 
-    public Edition(String description, Date releaseYear) {
+    public Edition(String description, Integer releaseYear) {
         this.description = description;
         this.releaseYear = releaseYear;
     }
 
-    public Edition(Integer editionId, String description, Date releaseYear) {
+    public Edition(Integer editionId, String description, Integer releaseYear) {
         this.editionId = editionId;
         this.description = description;
         this.releaseYear = releaseYear;
@@ -63,11 +63,11 @@ public class Edition {
         this.description = description;
     }
 
-    public Date getReleaseYear() {
+    public Integer getReleaseYear() {
         return releaseYear;
     }
 
-    public void setReleaseYear(Date releaseYear) {
+    public void setReleaseYear(Integer releaseYear) {
         this.releaseYear = releaseYear;
     }
 
@@ -79,30 +79,30 @@ public class Edition {
         this.book = book;
     }
 
-    public Set<Library> getLibraries() {
-        return libraries;
-    }
+//    public Set<Library> getLibraries() {
+//        return libraries;
+//    }
+//
+//    public void setLibraries(Set<Library> libraries) {
+//        this.libraries = libraries;
+//    }
+//
+//    public List<Rent> getRents() {
+//        return rents;
+//    }
+//
+//    public void setRents(List<Rent> rents) {
+//        this.rents = rents;
+//    }
+//
+//    public void addLibrary(Library library) {
+//        libraries.add(library);
+//        library.getEditions().add(this);
+//    }
 
-    public void setLibraries(Set<Library> libraries) {
-        this.libraries = libraries;
-    }
-
-    public List<Rent> getRents() {
-        return rents;
-    }
-
-    public void setRents(List<Rent> rents) {
-        this.rents = rents;
-    }
-
-    public void addLibrary(Library library) {
-        libraries.add(library);
-        library.getEditions().add(this);
-    }
-
-    public void addBook(Rent rent) {
-        rents.add(rent);
-        rent.setEdition(this);
-    }
+//    public void addRent(Rent rent) {
+//        rents.add(rent);
+//        rent.setEdition(this);
+//    }
 
 }

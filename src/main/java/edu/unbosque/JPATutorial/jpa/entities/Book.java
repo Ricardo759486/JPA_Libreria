@@ -1,6 +1,8 @@
 package edu.unbosque.JPATutorial.jpa.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Book") // Optional
@@ -17,11 +19,11 @@ public class Book {
     @Column(name = "book_id")
     private Integer bookId;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "title", nullable = false, unique = true)
     private String title;
 
     @Column(name = "isbn_number")
-    private String isbn;
+    private Integer isbn;
 
     @ManyToOne
     @JoinColumn(name = "author_id")
@@ -30,19 +32,19 @@ public class Book {
     @Column(name = "genere")
     private String genere;
 
-    @OneToOne(mappedBy = "book")
-    private Edition edition;
+    @OneToMany(mappedBy = "book", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Edition> editions = new ArrayList<>();
 
     public Book() {
     }
 
-    public Book(String title, String isbn, String genere) {
+    public Book(String title, Integer isbn, String genere) {
         this.title = title;
         this.isbn = isbn;
         this.genere = genere;
     }
 
-    public Book(Integer bookId, String title, String isbn, String genere) {
+    public Book(Integer bookId, String title, Integer isbn, String genere) {
         this.bookId = bookId;
         this.title = title;
         this.isbn = isbn;
@@ -65,11 +67,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getIsbn() {
+    public Integer getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(String isbn) {
+    public void setIsbn(Integer isbn) {
         this.isbn = isbn;
     }
 
@@ -85,21 +87,26 @@ public class Book {
         this.genere = genere;
     }
 
-    public void setEdition(Edition edition) {
-        this.edition = edition;
+    public List<Edition> getEditions() {
+        return editions;
+    }
+
+    public void setEditions(List<Edition> editions) {
+        this.editions = editions;
     }
 
     public void setAuthor(Author author) {
         this.author = author;
     }
 
-    public Edition getEdition() {
-        return edition;
-    }
 
     public void addEdition(Edition edition) {
-        this.edition = edition;
-        edition.setBook(this);
+      editions.add(edition);
+      edition.setBook(this);
+    }
+
+    public void deleteEdition(Edition edition) {
+        editions.remove(edition);
     }
 
 }

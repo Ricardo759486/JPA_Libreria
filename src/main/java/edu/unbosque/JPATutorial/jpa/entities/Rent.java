@@ -1,9 +1,7 @@
 package edu.unbosque.JPATutorial.jpa.entities;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "Rent") // Optional
@@ -26,10 +24,8 @@ public class Rent {
     @JoinColumn(name = "edition_id")
     private Edition edition;
 
-    @Column(name = "renting-date")
+    @Column(name = "renting_date")
     private Date rentingDate;
-
-
 
     public Rent() {}
 

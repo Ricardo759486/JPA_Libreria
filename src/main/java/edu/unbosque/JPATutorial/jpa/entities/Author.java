@@ -17,10 +17,10 @@ public class Author {
     @Column(name = "author_id")
     private Integer authorId;
 
-    @Column(nullable = false)
+    @Column(name = "name")
     private String name;
 
-    @Column(nullable = false)
+    @Column(name = "country")
     private String country;
 
     // FetchType.EAGER: When we retrieve a Library, we'll also automatically retrieve all of its corresponding Books
@@ -30,13 +30,15 @@ public class Author {
 
     public Author() {}
 
-    public Author(String name) {
+    public Author(String name, String country) {
         this.name = name;
+        this.country = country;
     }
 
-    public Author(Integer authorId, String name) {
+    public Author(Integer authorId, String name, String country) {
         this.authorId = authorId;
         this.name = name;
+        this.country = country;
     }
 
     public Integer getAuthorId() {
@@ -74,6 +76,10 @@ public class Author {
     public void addBook(Book book) {
         books.add(book);
         book.setAuthor(this);
+    }
+
+    public void deleteBook(Book book) {
+        books.remove(book);
     }
 
 }
