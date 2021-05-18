@@ -2,6 +2,7 @@ package edu.unbosque.JPATutorial.jpa.repositories;
 
 import edu.unbosque.JPATutorial.jpa.entities.Author;
 import edu.unbosque.JPATutorial.jpa.entities.Book;
+import edu.unbosque.JPATutorial.jpa.entities.Customer;
 import edu.unbosque.JPATutorial.jpa.entities.Edition;
 
 import javax.persistence.EntityManager;
@@ -19,6 +20,11 @@ public class EditionRepositoryImpl implements EditionRepository {
     public Optional<Edition> findById(Integer id) {
         Edition edition = entityManager.find(Edition.class, id);
         return edition != null ? Optional.of(edition) : Optional.empty();
+    }
+
+    public Edition findByIdN(Integer id) {
+        Edition edition = entityManager.find(Edition.class, id);
+        return edition;
     }
 
     public List<Edition> findAll() {
@@ -49,9 +55,21 @@ public class EditionRepositoryImpl implements EditionRepository {
                 Book book = edition.getBook();
                 book.deleteEdition(edition);
 
-//                edition.getRents().forEach(rent -> {
-//                    entityManager.remove(rent);
-//                });
+                for (int i = 0; i < edition.getRents().size();i++){
+                    if(id.equals(edition.getRents().get(i).getEdition().getEditionId())){
+                        Customer customer = edition.getRents().get(i).getCustomer();
+
+                        customer.getRents().forEach(rent -> {
+                            entityManager.remove(rent);
+                        });
+
+                    }
+
+                }
+
+                edition.getRents().forEach(rent -> {
+                    entityManager.remove(rent);
+                });
 
                 entityManager.remove(edition);
                 entityManager.getTransaction().commit();

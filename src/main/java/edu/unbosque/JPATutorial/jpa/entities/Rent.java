@@ -25,14 +25,11 @@ public class Rent {
     private Edition edition;
 
     @Column(name = "renting_date")
-    private Date rentingDate;
+    private String rentingDate;
 
     public Rent() {}
 
-    public Rent(Integer rentId, Customer customer, Edition edition, Date rentingDate) {
-        this.rentId = rentId;
-        this.customer = customer;
-        this.edition = edition;
+    public Rent(String rentingDate) {
         this.rentingDate = rentingDate;
     }
 
@@ -60,11 +57,11 @@ public class Rent {
         this.edition = edition;
     }
 
-    public Date getRentingDate() {
+    public String getRentingDate() {
         return rentingDate;
     }
 
-    public void setRentingDate(Date rentingDate) {
+    public void setRentingDate(String rentingDate) {
         this.rentingDate = rentingDate;
     }
 }

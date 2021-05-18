@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface EditionRepository {
     Optional<Edition> findById(Integer id);
 
+    Edition findByIdN(Integer id);
 
     List<Edition> findAll();
 

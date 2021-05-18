@@ -95,9 +95,12 @@ public class Customer {
         this.rents = rents;
     }
 
-    public void addRent(Rent rent) {
+    public void addRent(Rent rent, Edition edition2) {
         rents.add(rent);
+        Edition edition = new Edition();
+        edition.addRent(rent);
         rent.setCustomer(this);
+        rent.setEdition(edition2);
     }
 
 }

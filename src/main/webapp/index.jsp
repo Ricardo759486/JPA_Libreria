@@ -270,6 +270,7 @@
                             <tbody>
                             </tbody>
                         </table>
+
                         <h3>Costumer</h3>
 
                         <table id="costumerTbl">
@@ -282,6 +283,21 @@
                                 <th>Age</th>
                                 <th>Rents</th>
                                 <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+
+                        <h3>Rents</h3>
+
+                        <table id="rentsTbl">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Email</th>
+                                <th>Edition Id</th>
+                                <th>Renting date</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -317,6 +333,27 @@
                             var text = document.createTextNode(d[c]);
                             cell.appendChild(text);
                         });
+
+                        //---------------------------Library-------------------------------------
+
+                        if (actions.includes('update-library')) {
+                            var cell = newRow.insertCell();
+                            var action = document.createElement('button');
+                            action.setAttribute('onclick', 'location.href="./form-libraryUpdate.jsp?libraryId=' + d['libraryId'] + '";');
+                            var text = document.createTextNode('Update library');
+                            action.appendChild(text);
+                            cell.appendChild(action);
+                        }
+
+                        if (actions.includes('delete-library')) {
+                            var cell = newRow.insertCell();
+                            var action = document.createElement('button');
+                            action.setAttribute('onclick', 'location.href="./delete-library?libraryId=' + d['libraryId'] + '";');
+                            var text = document.createTextNode('Delete library');
+                            action.appendChild(text);
+                            cell.appendChild(action);
+                        }
+
                         //-----------------Author-------------------------------------
 
                         if (actions.includes('create-book')) {
@@ -396,6 +433,15 @@
                         }
                         //----------------------------------Customer--------------------------------------------------
 
+                        if (actions.includes('create-rent')) {
+                            var cell = newRow.insertCell();
+                            var action = document.createElement('button');
+                            action.setAttribute('onclick', 'location.href="./form-selectEditionRent.jsp?email=' + d['email'] + '";');
+                            var text = document.createTextNode('Select edition rent');
+                            action.appendChild(text);
+                            cell.appendChild(action);
+                        }
+
                         if (actions.includes('update-customer')) {
                             var cell = newRow.insertCell();
                             var action = document.createElement('button');
@@ -424,7 +470,7 @@
         }
 
         // Printing libraries
-        printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name']);
+        printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['update-library','delete-library']);
 
         // Printing authors
         printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name', 'numBooks', 'country'], actions = ['create-book', 'update-author','delete-author']);
@@ -436,8 +482,10 @@
         printTable(elementId = 'editionsTbl', servlet = 'list-editions', columns = ['editionId', 'description', 'releaseyear', 'authorId', 'bookId'], actions = ['update-edition', 'delete-edition']);
 
         // Printing customer
-        printTable(elementId = 'costumerTbl', servlet = 'list-costumers', columns = ['email', 'firstName', 'LastName', 'gender', 'age', 'numRents'], actions = ['update-customer', 'delete-customer']);
+        printTable(elementId = 'costumerTbl', servlet = 'list-costumers', columns = ['email', 'firstName', 'LastName', 'gender', 'age', 'numRents'], actions = ['create-rent','update-customer', 'delete-customer']);
 
+        // Printing rents
+        printTable(elementId = 'rentsTbl', servlet = 'list-rents', columns = ['rentId', 'email', 'editionId', 'rentingDate']);
     </script>
 </div>
 </body>
