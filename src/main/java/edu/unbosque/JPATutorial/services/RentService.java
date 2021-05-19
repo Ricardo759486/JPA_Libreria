@@ -71,4 +71,17 @@ public class RentService {
         return;
 
     }
+
+    public void deleteRent(Integer rentId) {
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        rentRepository = new RentRepositoryImpl(entityManager);
+        rentRepository.deleteById(rentId);
+
+        entityManager.close();
+        entityManagerFactory.close();
+
+    }
 }

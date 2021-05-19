@@ -28,8 +28,8 @@ public class Edition {
 
     // FetchType.EAGER: When we retrieve a Library, we'll also automatically retrieve all of its corresponding Editions
     // CascadeType.PERSIST: When we save a superhero, its movies will also be saved
-//    @ManyToMany(mappedBy = "editions", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-//    private Set<Library> libraries = new HashSet<>();
+    @ManyToMany(mappedBy = "editions", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    private Set<Library> libraries = new HashSet<>();
 
     @OneToMany(mappedBy = "edition", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Rent> rents = new ArrayList<>();
@@ -79,14 +79,14 @@ public class Edition {
         this.book = book;
     }
 
-//    public Set<Library> getLibraries() {
-//        return libraries;
-//    }
-//
-//    public void setLibraries(Set<Library> libraries) {
-//        this.libraries = libraries;
-//    }
-//
+    public Set<Library> getLibraries() {
+        return libraries;
+    }
+
+    public void setLibraries(Set<Library> libraries) {
+        this.libraries = libraries;
+    }
+
     public List<Rent> getRents() {
         return rents;
     }
@@ -94,11 +94,15 @@ public class Edition {
     public void setRents(List<Rent> rents) {
         this.rents = rents;
     }
-//
-//    public void addLibrary(Library library) {
-//        libraries.add(library);
-//        library.getEditions().add(this);
-//    }
+
+    public void addLibrary(Library library) {
+        libraries.add(library);
+        library.getEditions().add(this);
+    }
+
+    public void deleteRent(Rent rent) {
+        rents.remove(rent);
+    }
 
     public void addRent(Rent rent) {
         rents.add(rent);

@@ -43,4 +43,25 @@ public class RentRepositoryImpl implements RentRepository {
         return Optional.empty();
     }
 
+    @Override
+    public void deleteById(Integer id) {
+        Rent rent = entityManager.find(Rent.class, id);
+        if (rent != null) {
+            try {
+                entityManager.getTransaction().begin();
+                Customer customer = rent.getCustomer();
+                customer.deleteRent(rent);
+
+                Edition edition = rent.getEdition();
+                edition.deleteRent(rent);
+
+                entityManager.remove(rent);
+                entityManager.getTransaction().commit();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

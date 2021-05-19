@@ -103,4 +103,8 @@ public class Customer {
         rent.setEdition(edition2);
     }
 
+    public void deleteRent(Rent rent) {
+        rents.remove(rent);
+    }
+
 }

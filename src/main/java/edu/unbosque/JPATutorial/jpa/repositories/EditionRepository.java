@@ -17,5 +17,7 @@ public interface EditionRepository {
 
     void deleteById(Integer id);
 
+    void deleteByIdMany(Integer id);
+
     void updateId(Integer id, Edition edition);
 }

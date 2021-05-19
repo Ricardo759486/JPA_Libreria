@@ -5,6 +5,8 @@ import edu.unbosque.JPATutorial.jpa.entities.Book;
 import edu.unbosque.JPATutorial.jpa.entities.Library;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,6 +54,10 @@ public class LibraryRepositoryImpl implements LibraryRepository {
         if (library != null) {
             try {
                 entityManager.getTransaction().begin();
+
+                library.getEditions().forEach(edition -> {
+                    edition.getLibraries().remove(library);
+                });
 
                 entityManager.remove(library);
                 entityManager.getTransaction().commit();

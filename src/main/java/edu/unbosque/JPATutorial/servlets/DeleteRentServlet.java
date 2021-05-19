@@ -13,18 +13,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "deleteEditionServlet", value = "/delete-edition")
-public class DeleteEditionServlet extends HttpServlet {
+@WebServlet(name = "deleteRentServlet", value = "/delete-rent")
+public class DeleteRentServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setContentType("text/html");
 
-        EditionService editionService = new EditionService();
+        RentService rentService = new RentService();
 
-        Integer editionId = Integer.parseInt(request.getParameter("editionId"));
+        Integer rentId = Integer.parseInt(request.getParameter("rentId"));
 
-        editionService.deleteEdition(editionId);
+        rentService.deleteRent(rentId);
 
         response.sendRedirect("./index.jsp");
     }

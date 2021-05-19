@@ -206,6 +206,7 @@
                         <button onclick="location.href='./form-library.jsp';">Create library</button>
                         <button onclick="location.href='./form-author.jsp';">Create author</button>
                         <button onclick="location.href ='./form-customer.jsp';">Create customer</button>
+                        <button onclick="location.href ='./form-tablita.jsp';">xd</button>
                         <div/>
                         <h3>Libraries</h3>
 
@@ -353,6 +354,14 @@
                             action.appendChild(text);
                             cell.appendChild(action);
                         }
+                        if (actions.includes('create-libraryEdition')) {
+                            var cell = newRow.insertCell();
+                            var action = document.createElement('button');
+                            action.setAttribute('onclick', 'location.href="./form-selectLibraryEdition.jsp?libraryId=' + d['libraryId'] + '";');
+                            var text = document.createTextNode('Select library edition');
+                            action.appendChild(text);
+                            cell.appendChild(action);
+                        }
 
                         //-----------------Author-------------------------------------
 
@@ -460,6 +469,17 @@
                             cell.appendChild(action);
                         }
 
+                        //-------------------------------Rent-----------------------------------------------------------
+
+                        if (actions.includes('delete-rent')) {
+                            var cell = newRow.insertCell();
+                            var action = document.createElement('button');
+                            action.setAttribute('onclick', 'location.href="./delete-rent?rentId=' + d['rentId'] + '";');
+                            var text = document.createTextNode('Delete rent');
+                            action.appendChild(text);
+                            cell.appendChild(action);
+                        }
+
                     });
 
                 }
@@ -470,7 +490,7 @@
         }
 
         // Printing libraries
-        printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['update-library','delete-library']);
+        printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['update-library','delete-library', 'create-libraryEdition']);
 
         // Printing authors
         printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name', 'numBooks', 'country'], actions = ['create-book', 'update-author','delete-author']);
@@ -485,7 +505,7 @@
         printTable(elementId = 'costumerTbl', servlet = 'list-costumers', columns = ['email', 'firstName', 'LastName', 'gender', 'age', 'numRents'], actions = ['create-rent','update-customer', 'delete-customer']);
 
         // Printing rents
-        printTable(elementId = 'rentsTbl', servlet = 'list-rents', columns = ['rentId', 'email', 'editionId', 'rentingDate']);
+        printTable(elementId = 'rentsTbl', servlet = 'list-rents', columns = ['rentId', 'email', 'editionId', 'rentingDate'], actions = ['delete-rent']);
     </script>
 </div>
 </body>

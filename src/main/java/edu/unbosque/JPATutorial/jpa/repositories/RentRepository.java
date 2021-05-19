@@ -16,4 +16,6 @@ public interface RentRepository {
 
     Optional<Rent> save(Rent rent);
 
+    void deleteById(Integer id);
+
 }

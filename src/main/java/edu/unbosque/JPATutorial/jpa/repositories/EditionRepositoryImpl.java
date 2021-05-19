@@ -1,8 +1,6 @@
 package edu.unbosque.JPATutorial.jpa.repositories;
 
-import edu.unbosque.JPATutorial.jpa.entities.Author;
 import edu.unbosque.JPATutorial.jpa.entities.Book;
-import edu.unbosque.JPATutorial.jpa.entities.Customer;
 import edu.unbosque.JPATutorial.jpa.entities.Edition;
 
 import javax.persistence.EntityManager;
@@ -45,6 +43,27 @@ public class EditionRepositoryImpl implements EditionRepository {
     }
 
     @Override
+    public void deleteByIdMany(Integer id) {
+        Edition  edition = entityManager.find(Edition.class, id);
+        if (edition != null) {
+            try {
+
+                entityManager.getTransaction().begin();
+
+                edition.getLibraries().forEach(library -> {
+                    library.getEditions().remove(edition);
+                });
+
+                entityManager.remove(edition);
+                entityManager.getTransaction().commit();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
     public void deleteById(Integer id) {
         Edition edition = entityManager.find(Edition.class, id);
         if (edition != null) {
@@ -55,20 +74,12 @@ public class EditionRepositoryImpl implements EditionRepository {
                 Book book = edition.getBook();
                 book.deleteEdition(edition);
 
-                for (int i = 0; i < edition.getRents().size();i++){
-                    if(id.equals(edition.getRents().get(i).getEdition().getEditionId())){
-                        Customer customer = edition.getRents().get(i).getCustomer();
-
-                        customer.getRents().forEach(rent -> {
-                            entityManager.remove(rent);
-                        });
-
-                    }
-
-                }
-
                 edition.getRents().forEach(rent -> {
                     entityManager.remove(rent);
+                });
+
+                edition.getLibraries().forEach(library -> {
+                    library.getEditions().remove(edition);
                 });
 
                 entityManager.remove(edition);

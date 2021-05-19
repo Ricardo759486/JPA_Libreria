@@ -79,7 +79,6 @@ public class BookService {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-
         bookRepository = new BookRepositoryImpl(entityManager);
         bookRepository.deleteById(bookId);
 
