@@ -9,13 +9,14 @@ import edu.unbosque.JPATutorial.servlets.pojos.LibraryManyPOJO;
 import edu.unbosque.JPATutorial.servlets.pojos.LibraryPOJO;
 
 import javax.ejb.Stateless;
+
 import org.hibernate.Session;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Stateless
 public class LibraryService {
@@ -87,7 +88,7 @@ public class LibraryService {
 
     }
 
-    public void addLibraryEdition(Integer editionId, Integer libraryId){
+    public void addLibraryEdition(Integer editionId, Integer libraryId) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -137,7 +138,7 @@ public class LibraryService {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         libraryRepository = new LibraryRepositoryImpl(entityManager);
-        libraryRepository.updateId(libraryId,library);
+        libraryRepository.updateId(libraryId, library);
 
         entityManager.close();
         entityManagerFactory.close();

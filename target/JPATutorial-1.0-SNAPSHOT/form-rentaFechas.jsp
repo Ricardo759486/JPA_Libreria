@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rent edition</title>
+    <title>JPA Tutorial</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport"
           content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -83,28 +83,45 @@
                     </div>
                 </div>
             </nav>
-            <h3>Add edition to library</h3>
+            <div class="section-lg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
 
-            <table id="libraryEditionTbl">
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Description</th>
-                    <th>Release year</th>
-                    <th>Author Id</th>
-                    <th>BookId</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+                            <form action="./create-listDate">
+                                <input type="hidden" id="email" name="email"
+                                       value="<%= request.getParameter("email") %>">
+                                From: <input type="date" id="dateInitial" name="dateInitial">
+                                to: <input type="date" id="dateFinal" name="dateFinal">
+                                <br/>
+                                <br/>
+                                <input type="submit" value="Create list rents!">
+                            </form>
+                        </div>
+                        <table id="rentsTbl">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Email</th>
+                                <th>Edition Id</th>
+                                <th>Year</th>
+                                <th>Month</th>
+                                <th>Day</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 </div>
 <script src="js/core.min.js"></script>
 <script src="js/script.js"></script>
 <script>
+
     function printTable(elementId, servlet, columns, actions = []) {
 
         var xhr = new XMLHttpRequest();
@@ -124,27 +141,19 @@
                         cell.appendChild(text);
                     });
 
-                    //--------------------------------------------------Edition--------------------------------------------
+                    //---------------------------Library-------------------------------------
 
-                    if (actions.includes('create-editionLibrary')) {
+                    if (actions.includes('update-library')) {
                         var cell = newRow.insertCell();
                         var action = document.createElement('button');
-                        var libraryId = "<%= request.getParameter("libraryId") %>";
-                        action.setAttribute('onclick', 'location.href="./create-libraryEdition?editionId=' + d['editionId'] + '&libraryId=' + libraryId +'";');
-                        var text = document.createTextNode('create library edition');
+                        var email = "<%= request.getParameter("email") %>";
+                        var fechaIni = "<%= request.getParameter("dateInitial") %>";
+                        var fechaFin = "<%= request.getParameter("dateFinal") %>";
+                        action.setAttribute('onclick', 'location.href="./form-rentaFechas.jsp?email=' + email + '&dateInitial=' + fechaIni + + '&dateFinal=' + fechaFin + '";');
+                        var text = document.createTextNode('Update library');
                         action.appendChild(text);
                         cell.appendChild(action);
                     }
-                    if (actions.includes('delete-editionLibrary')) {
-                        var cell = newRow.insertCell();
-                        var action = document.createElement('button');
-                        var libraryId = "<%= request.getParameter("libraryId") %>";
-                        action.setAttribute('onclick', 'location.href="./delete-libraryEdition?editionId=' + d['editionId'] +'";');
-                        var text = document.createTextNode('delete library edition');
-                        action.appendChild(text);
-                        cell.appendChild(action);
-                    }
-
                 });
 
             }
@@ -153,9 +162,7 @@
         xhr.send(null);
 
     }
-
-    // Printing editions
-    printTable(elementId = 'libraryEditionTbl', servlet = 'list-editions', columns = ['editionId', 'description', 'releaseyear', 'authorId', 'bookId'], actions = ['create-editionLibrary', 'delete-editionLibrary']);
+    printTable(elementId = 'rentsTbl', servlet = 'list-rents', columns = ['rentId', 'email', 'editionId', 'year', 'month', 'day'], actions = ['']);
 </script>
 </body>
 </html>

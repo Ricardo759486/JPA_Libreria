@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -38,7 +39,9 @@ public class RentService {
                     rent.getRentId(),
                     rent.getCustomer().getEmail(),
                     rent.getEdition().getEditionId(),
-                    rent.getRentingDate()
+                    rent.getRentingDate().getYear(),
+                    rent.getRentingDate().getMonthValue(),
+                    rent.getRentingDate().getDayOfMonth()
             ));
         }
 
@@ -47,8 +50,7 @@ public class RentService {
     }
 
 
-
-    public void saveRent(String date, String customerEmail, Integer editionId) {
+    public void saveRent(LocalDate date, String customerEmail, Integer editionId) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -70,6 +72,19 @@ public class RentService {
 
         return;
 
+    }
+
+    public List<Rent> saveDateList(Integer year, Integer month, Integer day, Integer yearFinal, Integer monthFinal, Integer dayFinal, String email) {
+        List<Rent> rents = new ArrayList<>();
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        rentRepository = new RentRepositoryImpl(entityManager);
+        rents = rentRepository.findByDate(year, month, day, yearFinal, monthFinal, dayFinal, email);
+
+        entityManager.close();
+        entityManagerFactory.close();
+        return rents;
     }
 
     public void deleteRent(Integer rentId) {

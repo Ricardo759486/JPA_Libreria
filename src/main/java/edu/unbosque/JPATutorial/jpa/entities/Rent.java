@@ -1,6 +1,7 @@
 package edu.unbosque.JPATutorial.jpa.entities;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.*;
 
 @Entity
@@ -25,11 +26,11 @@ public class Rent {
     private Edition edition;
 
     @Column(name = "renting_date")
-    private String rentingDate;
+    private LocalDate rentingDate;
 
     public Rent() {}
 
-    public Rent(String rentingDate) {
+    public Rent(LocalDate rentingDate) {
         this.rentingDate = rentingDate;
     }
 
@@ -57,11 +58,11 @@ public class Rent {
         this.edition = edition;
     }
 
-    public String getRentingDate() {
+    public LocalDate getRentingDate() {
         return rentingDate;
     }
 
-    public void setRentingDate(String rentingDate) {
+    public void setRentingDate(LocalDate rentingDate) {
         this.rentingDate = rentingDate;
     }
 }

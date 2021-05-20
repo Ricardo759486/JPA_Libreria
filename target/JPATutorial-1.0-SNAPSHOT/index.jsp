@@ -298,7 +298,9 @@
                                 <th>Id</th>
                                 <th>Email</th>
                                 <th>Edition Id</th>
-                                <th>Renting date</th>
+                                <th>Year</th>
+                                <th>Month</th>
+                                <th>Day</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -440,6 +442,7 @@
                             action.appendChild(text);
                             cell.appendChild(action);
                         }
+
                         //----------------------------------Customer--------------------------------------------------
 
                         if (actions.includes('create-rent')) {
@@ -505,7 +508,7 @@
         printTable(elementId = 'costumerTbl', servlet = 'list-costumers', columns = ['email', 'firstName', 'LastName', 'gender', 'age', 'numRents'], actions = ['create-rent','update-customer', 'delete-customer']);
 
         // Printing rents
-        printTable(elementId = 'rentsTbl', servlet = 'list-rents', columns = ['rentId', 'email', 'editionId', 'rentingDate'], actions = ['delete-rent']);
+        printTable(elementId = 'rentsTbl', servlet = 'list-rents', columns = ['rentId', 'email', 'editionId', 'year', 'month', 'day'], actions = ['delete-rent']);
     </script>
 </div>
 </body>

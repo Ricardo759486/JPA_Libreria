@@ -24,9 +24,9 @@ public class DeleteLibraryEditionServlet extends HttpServlet {
 
         LibraryService libraryService = new LibraryService();
 
-        //Integer editionId = Integer.parseInt(request.getParameter("editionId"));
+        Integer editionId = Integer.parseInt(request.getParameter("editionId"));
 
-        Integer editionId = 16;
+//        Integer editionId = 16;
 
         libraryService.deleteLibraryMany(editionId);
 

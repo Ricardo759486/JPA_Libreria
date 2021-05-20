@@ -10,7 +10,7 @@ public interface RentRepository {
 
     Optional<Rent> findById(Integer id);
 
-    Optional<Rent> findByDate(String date);
+    List<Rent> findByDate(Integer year, Integer month, Integer day, Integer yearFinal, Integer monthFinal, Integer dayFinal, String email);
 
     List<Rent> findAll();
 

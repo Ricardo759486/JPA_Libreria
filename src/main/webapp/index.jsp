@@ -145,9 +145,8 @@
                         New HTML Templates Generation</h3>
                     <div class="group-lg group-middle"
                          data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 700 }">
-                        <a class="button button-primary button-shadow" href="#features"
-                           data-custom-scroll-to="features">See Features</a><a class="button button-black button-shadow"
-                                                                               href="#">Buy template</a></div>
+
+                    </div>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -155,10 +154,7 @@
                      data-swiper-anime="{ &quot;animation&quot;: &quot;swiperSlideRotate&quot;, &quot;duration&quot;: 2000, &quot;delay&quot;: 600 }"></div>
                 <div class="swiper-slide-caption context-dark">
                     <h2 data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 500 }">
-                        The Power of Bootstrap<br class="d-none d-lg-block"> Discover it with Element</h2><a
-                        class="button button-primary button-shadow" href="#"
-                        data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 700 }">Buy
-                    template</a>
+                        The Power of Bootstrap<br class="d-none d-lg-block"></h2>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -176,9 +172,7 @@
                                     that.</h5>
                                 <div class="group-lg group-middle"
                                      data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 700 }">
-                                    <a class="button button-black button-shadow" href="#features"
-                                       data-custom-scroll-to="features">See Features</a><a
-                                        class="button button-primary button-shadow" href="#">Buy template</a></div>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -206,7 +200,6 @@
                         <button onclick="location.href='./form-library.jsp';">Create library</button>
                         <button onclick="location.href='./form-author.jsp';">Create author</button>
                         <button onclick="location.href ='./form-customer.jsp';">Create customer</button>
-                        <button onclick="location.href ='./form-tablita.jsp';">xd</button>
                         <div/>
                         <h3>Libraries</h3>
 
@@ -298,7 +291,9 @@
                                 <th>Id</th>
                                 <th>Email</th>
                                 <th>Edition Id</th>
-                                <th>Renting date</th>
+                                <th>Year</th>
+                                <th>Month</th>
+                                <th>Day</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -440,6 +435,7 @@
                             action.appendChild(text);
                             cell.appendChild(action);
                         }
+
                         //----------------------------------Customer--------------------------------------------------
 
                         if (actions.includes('create-rent')) {
@@ -505,7 +501,7 @@
         printTable(elementId = 'costumerTbl', servlet = 'list-costumers', columns = ['email', 'firstName', 'LastName', 'gender', 'age', 'numRents'], actions = ['create-rent','update-customer', 'delete-customer']);
 
         // Printing rents
-        printTable(elementId = 'rentsTbl', servlet = 'list-rents', columns = ['rentId', 'email', 'editionId', 'rentingDate'], actions = ['delete-rent']);
+        printTable(elementId = 'rentsTbl', servlet = 'list-rents', columns = ['rentId', 'email', 'editionId', 'year', 'month', 'day'], actions = ['delete-rent']);
     </script>
 </div>
 </body>

@@ -20,11 +20,10 @@ public class RentRepositoryImpl implements RentRepository {
         return rent != null ? Optional.of(rent) : Optional.empty();
     }
 
-    public Optional<Rent> findByDate(String rentingDate) {
-        Rent rent = entityManager.createQuery("SELECT b FROM Rent b WHERE b.rentingDate = :rentingDate", Rent.class)
-                .setParameter("rentingDate", rentingDate)
-                .getSingleResult();
-        return rent != null ? Optional.of(rent) : Optional.empty();
+    public List<Rent> findByDate(Integer year, Integer month, Integer day, Integer yearFinal, Integer monthFinal, Integer dayFinal, String emailA) {
+        String fechaIni = "" + year + "-" + month + "-" + day;
+        String fechaFin = "" + yearFinal + "-" + monthFinal + "-" + dayFinal;
+        return entityManager.createQuery("SELECT all FROM Rent WHERE email = emailA and renting_date <= fechaIni  and renting_date >= fechaFin ").getResultList();
     }
 
     public List<Rent> findAll() {

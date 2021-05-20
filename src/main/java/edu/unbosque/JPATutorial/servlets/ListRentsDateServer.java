@@ -18,29 +18,32 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
-@WebServlet(name = "cretateRentServlet", value = "/create-rent")
-public class CreateRentServlet extends HttpServlet {
+@WebServlet(name = "listRentsDateServer", value = "/create-listDate")
+public class ListRentsDateServer extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setContentType("text/html");
 
         String email = request.getParameter("email");
-        Integer editionId = Integer.parseInt(request.getParameter("editionId"));
-        LocalDate date = LocalDate.parse(request.getParameter("date"));
+        LocalDate dateInitial = LocalDate.parse(request.getParameter("dateInitial"));
+        LocalDate dateFinal = LocalDate.parse(request.getParameter("dateFinal"));
 
+        Integer yearInitial = dateInitial.getYear();
+        Integer monthInitial = dateInitial.getMonthValue();
+        Integer dayInitial = dateInitial.getDayOfMonth();
 
-        String mensaje = "entro";
+        Integer yearFinal = dateFinal.getYear();
+        Integer monthFinal = dateFinal.getMonthValue();
+        Integer dayFinal = dateFinal.getDayOfMonth();
 
 //        PrintWriter out = response.getWriter();
 //        out.println("<html><body>");
 //        out.println("<h1>" + email + "</h1>");
-//        out.println("<h1>" + editionId + "</h1>");
-//        out.println("<h1>" + fechaDate.toString() + "</h1>");
 //        out.println("</body></html>");
 
         RentService rentService = new RentService();
-        rentService.saveRent(date, email, editionId);
+        rentService.saveDateList(yearInitial, monthInitial, dayInitial, yearFinal, monthFinal, dayFinal, email);
 
         response.sendRedirect("./index.jsp");
 

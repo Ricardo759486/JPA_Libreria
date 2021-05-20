@@ -139,7 +139,7 @@
                         var cell = newRow.insertCell();
                         var action = document.createElement('button');
                         var libraryId = "<%= request.getParameter("libraryId") %>";
-                        action.setAttribute('onclick', 'location.href="./delete-libraryEdition?editionId=' + d['16'] +'";');
+                        action.setAttribute('onclick', 'location.href="./delete-libraryEdition?editionId=' + d['editionId'] +'";');
                         var text = document.createTextNode('delete library edition');
                         action.appendChild(text);
                         cell.appendChild(action);
